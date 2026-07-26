@@ -180,6 +180,27 @@ if (contactMenus.length) {
   });
 }
 
+document.querySelectorAll(".temple-zone-map").forEach((map) => {
+  const zoneLabels = [...map.querySelectorAll(".zone-label[data-zone]")];
+
+  const activateZone = (label) => {
+    map.dataset.activeZone = label.dataset.zone;
+  };
+
+  const clearZone = (label) => {
+    if (map.dataset.activeZone === label.dataset.zone) {
+      delete map.dataset.activeZone;
+    }
+  };
+
+  zoneLabels.forEach((label) => {
+    label.addEventListener("pointerenter", () => activateZone(label));
+    label.addEventListener("pointerleave", () => clearZone(label));
+    label.addEventListener("focus", () => activateZone(label));
+    label.addEventListener("blur", () => clearZone(label));
+  });
+});
+
 const enhanceGreenBloomPrototypes = () => {
   const greenBloomImages = [
     ...document.querySelectorAll(
