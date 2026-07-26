@@ -51,12 +51,32 @@
 }
 
 .output-c-the-sign .ppt-annotated-gallery {
-  grid-template-columns: 1fr;
-  gap: clamp(34px, 5vw, 72px);
+  --c-sign-gallery-gap: clamp(22px, 2.6vw, 38px);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  justify-items: center;
+  align-items: start;
+  column-gap: var(--c-sign-gallery-gap);
+  row-gap: clamp(34px, 4vw, 58px);
 }
 
 .output-c-the-sign .ppt-annotated-gallery figure {
+  width: 100%;
   min-width: 0;
+  margin-inline: auto;
+}
+
+.output-c-the-sign .ppt-annotated-gallery figure:first-child {
+  grid-column: 1 / -1;
+  width: min(960px, 74%);
+}
+
+.output-c-the-sign .ppt-annotated-gallery figure:nth-child(2) {
+  grid-column: 1;
+}
+
+.output-c-the-sign .ppt-annotated-gallery .c-sign-after-prototype {
+  grid-column: 2;
+  width: 100%;
 }
 
 .output-c-the-sign .ppt-annotated-gallery img {
@@ -72,6 +92,27 @@
 .output-temple-quarter .temple-prototype-gallery img {
   border: 0;
   padding: 0;
+}
+
+@media (max-width: 900px) {
+  .output-c-the-sign .ppt-annotated-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .output-c-the-sign .ppt-annotated-gallery figure {
+    width: 100%;
+  }
+
+  .output-c-the-sign .ppt-annotated-gallery figure:first-child,
+  .output-c-the-sign .ppt-annotated-gallery figure:nth-child(2) {
+    grid-column: auto;
+    width: 100%;
+  }
+
+  .output-c-the-sign .ppt-annotated-gallery .c-sign-after-prototype {
+    grid-column: auto;
+    width: 100%;
+  }
 }
 
 @media (max-width: 760px) {
