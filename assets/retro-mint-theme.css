@@ -44,6 +44,25 @@ body {
   padding: 8px 15px;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.site-header .header-actions a {
+  border: 1px solid rgba(224, 255, 233, 0.32);
+  border-radius: 999px;
+  padding: 8px 14px;
+  color: #f4ffec;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+.site-header .header-actions a:hover {
+  background: rgba(224, 255, 233, 0.12);
+}
+
 .portfolio-hero {
   min-height: min(690px, calc(100vh - 70px));
   display: grid;
@@ -515,6 +534,19 @@ body.folder-view {
 }
 
 @media (max-width: 620px) {
+  .site-header {
+    padding-inline: 16px;
+  }
+
+  .site-header .header-actions {
+    gap: 6px;
+  }
+
+  .site-header .header-actions a {
+    padding: 7px 10px;
+    font-size: 10px;
+  }
+
   .portfolio-hero {
     padding-inline: 22px;
   }
