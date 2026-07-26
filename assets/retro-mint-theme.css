@@ -1348,10 +1348,13 @@ body {
 /* Homepage: stronger title and softer glass-like decorative glints */
 .index-page .hero-copy h1 {
   color: #315f56;
-  font-family: "Avenir Next", "Helvetica Neue", "PingFang SC", sans-serif;
+  font-family: "Gill Sans", "Avenir Next", "Helvetica Neue", "PingFang SC", sans-serif;
   font-weight: 600;
-  letter-spacing: -0.025em;
-  text-shadow: 0 8px 28px rgba(63, 112, 99, 0.08);
+  font-kerning: normal;
+  font-variant-ligatures: none;
+  letter-spacing: 0.012em;
+  line-height: 0.96;
+  text-shadow: 0 8px 28px rgba(63, 112, 99, 0.06);
 }
 
 .index-page .portfolio-hero::before,
