@@ -21,7 +21,159 @@
 .__variable_geist_mono_0vffvn2 { --font-geist-mono: 'Geist Mono', sans-serif; }
 </style>
 <link rel="stylesheet" href="../../assets/portfolio-fixes.css">
-<link rel="stylesheet" href="../../assets/retro-mint-theme.css">
+<link rel="stylesheet" href="../../assets/retro-mint-theme.css?v=20260726-global-pagination-6">
+<style>
+.output-vape-loop .output-gallery {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+.output-vape-loop .prototype-card {
+  position: relative;
+  min-width: 0;
+  margin: 0;
+  outline: none;
+  z-index: 1;
+}
+.output-vape-loop .prototype-card > img {
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+.output-vape-loop .prototype-card:hover,
+.output-vape-loop .prototype-card:focus {
+  z-index: 12;
+}
+.output-vape-loop .prototype-card:hover > img,
+.output-vape-loop .prototype-card:focus > img {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 42px rgba(47, 91, 78, 0.2);
+}
+.output-vape-loop .prototype-bubble {
+  position: absolute;
+  top: 22%;
+  left: calc(100% + 18px);
+  width: min(224px, 22vw);
+  padding: 16px 17px;
+  border: 1px solid rgba(76, 121, 107, 0.3);
+  border-radius: 18px;
+  color: #33463f;
+  background: rgba(237, 247, 241, 0.96);
+  box-shadow: 0 18px 44px rgba(47, 91, 78, 0.18);
+  backdrop-filter: blur(12px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-8px) scale(0.96);
+  transform-origin: left center;
+  transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
+}
+.output-vape-loop .prototype-bubble::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: -18px;
+  width: 18px;
+  height: 1px;
+  background: rgba(76, 121, 107, 0.55);
+}
+.output-vape-loop .prototype-bubble::after {
+  content: "";
+  position: absolute;
+  top: 25px;
+  left: -27px;
+  width: 10px;
+  height: 10px;
+  border: 3px solid #edf7f1;
+  border-radius: 50%;
+  background: #df7fae;
+  box-shadow: 0 0 0 1px rgba(76, 121, 107, 0.22);
+}
+.output-vape-loop .prototype-bubble strong {
+  display: block;
+  margin-bottom: 7px;
+  color: #d96f9f;
+  font-size: 14px;
+  line-height: 1.35;
+}
+.output-vape-loop .prototype-bubble span {
+  display: block;
+  color: #50615a;
+  font-size: 12px;
+  line-height: 1.65;
+}
+.output-vape-loop .prototype-card:hover .prototype-bubble,
+.output-vape-loop .prototype-card:focus .prototype-bubble {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0) scale(1);
+}
+.output-vape-loop .prototype-card:nth-child(n + 4) .prototype-bubble {
+  right: calc(100% + 18px);
+  left: auto;
+  transform: translateX(8px) scale(0.96);
+  transform-origin: right center;
+}
+.output-vape-loop .prototype-card:nth-child(n + 4) .prototype-bubble::before {
+  right: -18px;
+  left: auto;
+}
+.output-vape-loop .prototype-card:nth-child(n + 4) .prototype-bubble::after {
+  right: -27px;
+  left: auto;
+}
+.output-vape-loop .prototype-card:nth-child(n + 4):hover .prototype-bubble,
+.output-vape-loop .prototype-card:nth-child(n + 4):focus .prototype-bubble {
+  transform: translateX(0) scale(1);
+}
+.output-vape-loop .prototype-card > .wallet-screen {
+  padding: 0;
+  border: 0;
+  border-radius: 30px;
+  background: transparent;
+  box-shadow: 0 16px 32px rgba(47, 91, 78, 0.14);
+}
+@media (max-width: 1280px) {
+  .output-vape-loop .output-gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .output-vape-loop .prototype-bubble,
+  .output-vape-loop .prototype-card:nth-child(n + 4) .prototype-bubble {
+    top: auto;
+    right: 8px;
+    bottom: 12px;
+    left: 8px;
+    width: auto;
+    transform: translateY(8px) scale(0.97);
+    transform-origin: bottom center;
+  }
+  .output-vape-loop .prototype-bubble::before,
+  .output-vape-loop .prototype-bubble::after {
+    display: none;
+  }
+  .output-vape-loop .prototype-card:hover .prototype-bubble,
+  .output-vape-loop .prototype-card:focus .prototype-bubble,
+  .output-vape-loop .prototype-card:nth-child(n + 4):hover .prototype-bubble,
+  .output-vape-loop .prototype-card:nth-child(n + 4):focus .prototype-bubble {
+    transform: translateY(0) scale(1);
+  }
+}
+@media (max-width: 900px) {
+  .output-vape-loop .output-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow-x: visible;
+  }
+}
+@media (max-width: 620px) {
+  .output-vape-loop .output-gallery {
+    grid-template-columns: minmax(0, 430px);
+    justify-content: center;
+    gap: 24px;
+    padding: 18px;
+  }
+  .output-vape-loop .prototype-card {
+    width: 100%;
+    max-width: 430px;
+    justify-self: center;
+  }
+}
+</style>
 <script src="../../assets/folder-interactions.js" defer></script>
 </head>
 <body class="__variable_geist_1qyd02f __variable_geist_mono_0vffvn2 antialiased">
@@ -157,10 +309,41 @@
 </div>
 </header>
 <div class="output-gallery">
-<img src="../../visual/ppt-vape-card.png" alt="The Vape Reward Loop 数字回收卡界面"/>
-<img src="../../visual/ppt-vape-rewards.png" alt="The Vape Reward Loop 用户软件首页与积分界面"/>
-<img src="../../visual/ppt-vape-records.png" alt="The Vape Reward Loop 回收记录与奖励反馈界面"/>
-<img src="../../visual/ppt-vape-nearby.png" alt="The Vape Reward Loop 回收点查找界面"/>
+<figure class="prototype-card" tabindex="0">
+<img src="../../visual/vape-live-home.jpg" alt="The Vape Reward Loop 用户软件首页"/>
+<figcaption class="prototype-bubble">
+<strong>用户软件首页</strong>
+<span>集中查看数字回收卡、当前积分、最近活动，以及奖励和回收记录等快捷入口。</span>
+</figcaption>
+</figure>
+<figure class="prototype-card" tabindex="0">
+<img src="../../visual/vape-live-rewards-complete.jpg" alt="The Vape Reward Loop 显示完整积分卡的奖励中心界面"/>
+<figcaption class="prototype-bubble">
+<strong>积分与奖励</strong>
+<span>查看当前积分和奖励等级，并用回收获得的积分兑换优惠券或其他奖励。</span>
+</figcaption>
+</figure>
+<figure class="prototype-card" tabindex="0">
+<img src="../../visual/vape-live-nearby.jpg" alt="The Vape Reward Loop 附近回收点查找界面"/>
+<figcaption class="prototype-bubble">
+<strong>附近回收点</strong>
+<span>搜索附近的电子烟回收点，查看距离、开放状态，并快速获取导航路线。</span>
+</figcaption>
+</figure>
+<figure class="prototype-card" tabindex="0">
+<img class="wallet-screen" src="../../visual/vape-live-wallet-front-clean.jpg" alt="The Vape Reward Loop Apple Wallet 数字回收卡首页"/>
+<figcaption class="prototype-bubble">
+<strong>Apple Wallet 回收卡</strong>
+<span>将个人回收身份保存到苹果钱包，回收时出示二维码即可完成识别与积分记录。</span>
+</figcaption>
+</figure>
+<figure class="prototype-card" tabindex="0">
+<img class="wallet-screen" src="../../visual/vape-live-wallet-detail-clean.jpg" alt="The Vape Reward Loop Apple Wallet 积分与回收记录详情页"/>
+<figcaption class="prototype-bubble">
+<strong>Apple Wallet 详情</strong>
+<span>查看当前积分、奖励进度、使用方法，以及最近完成的电子烟回收记录。</span>
+</figcaption>
+</figure>
 </div>
 </section>
 <section class="solution-section">
@@ -200,11 +383,7 @@
 <h2>最终方案将门店回收、数字积分与现有配送流程连接起来：用户通过积分获得即时奖励，零售商则根据门店回收率或综合回收表现获得采购激励，避免“销售越多、奖励越高”的错误逻辑。</h2>
 </article>
 </section>
-<a class="next-project" href="../temple-quarter/index.html">
-<span>下一个作品</span>
-<strong>城市区域服务平台｜Temple Quarter 24h</strong>
-<b>→</b>
-</a>
+<nav class="project-pagination" aria-label="作品翻页"><a href="../c-the-sign/index.html"><b>←</b><div><span>上一个作品</span><strong>全科问诊癌症风险辅助系统｜C the Sign</strong></div></a><a href="../temple-quarter/index.html"><div><span>下一个作品</span><strong>城市区域服务平台｜Temple Quarter 24h</strong></div><b>→</b></a></nav>
 </main>
 </body>
 </html>
