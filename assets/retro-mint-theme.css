@@ -1345,6 +1345,98 @@ body {
   }
 }
 
+/* Homepage: stronger title and softer glass-like decorative glints */
+.index-page .hero-copy h1 {
+  color: #315f56;
+  font-family: "Avenir Next", "Helvetica Neue", "PingFang SC", sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  text-shadow: 0 8px 28px rgba(63, 112, 99, 0.08);
+}
+
+.index-page .portfolio-hero::before,
+.index-page .portfolio-hero::after {
+  content: "✧";
+  color: rgba(80, 137, 122, 0.4);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  text-shadow:
+    0 0 18px rgba(195, 235, 216, 0.72),
+    0 8px 24px rgba(79, 132, 117, 0.08);
+  animation: soft-home-glint 5.5s ease-in-out infinite;
+}
+
+.index-page .portfolio-hero::before {
+  top: 13%;
+  right: 9%;
+  font-size: clamp(32px, 4.4vw, 62px);
+}
+
+.index-page .portfolio-hero::after {
+  bottom: 17%;
+  left: 5%;
+  font-size: clamp(18px, 2.3vw, 30px);
+  animation-delay: -2.4s;
+}
+
+.index-page .hero-folder-object::after {
+  content: "";
+  inset: auto;
+  top: 50%;
+  left: 50%;
+  width: clamp(74px, 8vw, 112px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, 0.68);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.92) 0 7%, transparent 8%),
+    radial-gradient(circle at 43% 40%, rgba(244, 255, 249, 0.74), rgba(185, 232, 214, 0.24) 48%, rgba(92, 167, 146, 0.12) 70%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.86),
+    inset 0 -12px 24px rgba(63, 132, 113, 0.08),
+    0 16px 34px rgba(58, 115, 100, 0.13);
+  transform: translate(-50%, -50%);
+}
+
+.index-page .portfolio-index-heading p {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.index-page .portfolio-index-heading p::before,
+.index-page .portfolio-index-heading p::after {
+  content: "";
+  width: 10px;
+  aspect-ratio: 1;
+  border: 1px solid rgba(105, 158, 143, 0.3);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 28%, #fff 0 18%, rgba(153, 211, 190, 0.58) 34%, rgba(116, 177, 159, 0.18) 72%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    0 4px 12px rgba(74, 126, 111, 0.13);
+}
+
+@keyframes soft-home-glint {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    opacity: 0.94;
+    transform: translateY(-6px) rotate(5deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .index-page .portfolio-hero::before,
+  .index-page .portfolio-hero::after {
+    animation: none;
+  }
+}
+
 /* HTML portfolio: keep the contact panel above the homepage and project sections */
 .case-page {
   overflow: visible;
