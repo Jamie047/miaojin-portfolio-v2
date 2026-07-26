@@ -1486,14 +1486,13 @@ body {
 .prototype-callout::after {
   content: "";
   position: absolute;
-  top: calc(50% - 3px);
-  right: calc(100% + var(--connector-width) - 3px);
-  width: 7px;
-  height: 7px;
-  border: 2px solid #f8fffb;
-  border-radius: 50%;
-  background: #4f8277;
-  box-shadow: 0 0 0 2px rgba(41, 79, 70, 0.42);
+  top: calc(50% - 5px);
+  right: calc(100% + var(--connector-width) - 1px);
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-right: 8px solid rgba(41, 79, 70, 0.9);
+  border-bottom: 5px solid transparent;
 }
 
 .callout-identity {
