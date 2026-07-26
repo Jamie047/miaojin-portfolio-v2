@@ -1,0 +1,85 @@
+.ppt-figure {
+  margin: 0;
+}
+
+.ppt-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.ppt-figure figcaption {
+  display: grid;
+  gap: 8px;
+  padding: 18px 4px 0;
+  color: #596053;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.ppt-figure figcaption strong {
+  color: #2f342d;
+  font-size: 16px;
+}
+
+.ppt-figure figcaption span {
+  display: block;
+}
+
+.ppt-figure figcaption small {
+  color: #7a8175;
+  font-size: 12px;
+}
+
+.overview-visual.overview-visual-captioned {
+  aspect-ratio: auto;
+  overflow: visible;
+  padding: clamp(14px, 1.8vw, 24px);
+}
+
+.overview-visual-captioned .ppt-figure img {
+  border-radius: 10px;
+}
+
+.overview-visual-captioned .zone-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  color: #6d7469;
+  font-size: 12px;
+}
+
+.output-c-the-sign .ppt-annotated-gallery {
+  grid-template-columns: 1fr;
+  gap: clamp(34px, 5vw, 72px);
+}
+
+.output-c-the-sign .ppt-annotated-gallery figure {
+  min-width: 0;
+}
+
+.output-c-the-sign .ppt-annotated-gallery img {
+  border: 0;
+  padding: 0;
+}
+
+.output-temple-quarter .temple-prototype-gallery {
+  grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.28fr);
+  align-items: start;
+}
+
+.output-temple-quarter .temple-prototype-gallery img {
+  border: 0;
+  padding: 0;
+}
+
+@media (max-width: 760px) {
+  .output-temple-quarter .temple-prototype-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .overview-visual.overview-visual-captioned {
+    padding: 12px;
+  }
+}
