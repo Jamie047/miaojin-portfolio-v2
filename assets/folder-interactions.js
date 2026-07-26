@@ -180,6 +180,101 @@ if (contactMenus.length) {
   });
 }
 
+const enhanceGreenBloomPrototypes = () => {
+  const greenBloomImages = [
+    ...document.querySelectorAll(
+      'img[alt^="自然教育课程协作平台｜Green Bloom 作品展示"]',
+    ),
+  ];
+
+  if (greenBloomImages.length !== 4) return;
+
+  const annotations = [
+    [
+      {
+        title: "个人中心",
+        text: "将课程、照片和反馈整理为可分享成果。",
+        x: "76%",
+        y: "31%",
+        edge: "end",
+      },
+    ],
+    [
+      {
+        title: "课程设计指导",
+        text: "通过分步模板生成目标、活动和安全计划。",
+        x: "50%",
+        y: "68%",
+      },
+    ],
+    [
+      {
+        title: "一键发布与招募",
+        text: "生成活动海报和报名二维码。",
+        x: "18%",
+        y: "70%",
+        edge: "start",
+      },
+      {
+        title: "反馈收集",
+        text: "统一收集参与者反馈和教学数据。",
+        x: "28%",
+        y: "70%",
+      },
+    ],
+    [
+      {
+        title: "首页",
+        text: "快捷身份选择。",
+        x: "50%",
+        y: "41%",
+      },
+    ],
+  ];
+
+  greenBloomImages.forEach((image, imageIndex) => {
+    if (image.closest(".green-bloom-prototype")) return;
+
+    const figure = document.createElement("figure");
+    figure.className =
+      "ppt-figure annotated-prototype green-bloom-prototype";
+    image.replaceWith(figure);
+    figure.append(image);
+
+    annotations[imageIndex].forEach((annotation) => {
+      const hotspot = document.createElement("button");
+      hotspot.type = "button";
+      hotspot.className = "annotation-hotspot";
+      if (annotation.edge) {
+        hotspot.classList.add(`hotspot-tooltip-${annotation.edge}`);
+      }
+      hotspot.style.setProperty("--hotspot-x", annotation.x);
+      hotspot.style.setProperty("--hotspot-y", annotation.y);
+      hotspot.setAttribute("aria-label", `查看${annotation.title}说明`);
+
+      const dot = document.createElement("span");
+      dot.className = "hotspot-dot";
+      dot.setAttribute("aria-hidden", "true");
+
+      const tooltip = document.createElement("span");
+      tooltip.className = "hotspot-tooltip";
+      tooltip.setAttribute("role", "tooltip");
+
+      const title = document.createElement("strong");
+      title.textContent = annotation.title;
+
+      const text = document.createElement("span");
+      text.textContent = annotation.text;
+
+      tooltip.append(title, text);
+      hotspot.append(dot, tooltip);
+      figure.append(hotspot);
+    });
+  });
+};
+
+enhanceGreenBloomPrototypes();
+
 const annotationHotspots = [...document.querySelectorAll(".annotation-hotspot")];
 
 if (annotationHotspots.length) {
