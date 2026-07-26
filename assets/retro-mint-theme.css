@@ -1543,6 +1543,34 @@ body {
   box-shadow: 0 18px 44px rgba(51, 92, 81, 0.1);
 }
 
+.c-sign-prototype {
+  overflow: visible;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.c-sign-prototype > img,
+.c-sign-after-crop {
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 18px 44px rgba(51, 92, 81, 0.1);
+}
+
+.c-sign-after-crop {
+  position: relative;
+  aspect-ratio: 16 / 25;
+}
+
+.c-sign-after-crop > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 240%;
+  max-width: none;
+  max-height: none !important;
+  height: auto;
+}
+
 .annotation-hotspot {
   position: absolute;
   z-index: 4;
