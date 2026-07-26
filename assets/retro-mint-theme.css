@@ -2080,3 +2080,157 @@ body {
     -webkit-text-stroke-width: 1px;
   }
 }
+
+/* Cross-display tonal balance: richer sRGB surfaces with less pure-white glare */
+:root {
+  color-scheme: light only;
+  --mint-50: #eaf4ee;
+  --mint-100: #dcebe2;
+  --mint-200: #c8ddd1;
+  --mint-300: #a9cbb9;
+  --forest-900: #234a42;
+  --forest-800: #2f5a50;
+  --forest-700: #416d61;
+  --forest-600: #587f74;
+  --dark-line: rgba(47, 93, 80, 0.22);
+}
+
+html {
+  background: #dbe9e0;
+}
+
+body {
+  color: #2f5048;
+  background:
+    radial-gradient(circle at 88% 8%, rgba(225, 165, 195, 0.24), transparent 24rem),
+    radial-gradient(circle at 10% 28%, rgba(113, 191, 161, 0.34), transparent 29rem),
+    linear-gradient(145deg, #e1eee6 0%, #d6e8dd 56%, #e4f0e8 100%);
+}
+
+.site-header {
+  border-color: rgba(48, 93, 80, 0.2);
+  background: rgba(225, 239, 231, 0.94);
+  box-shadow: 0 8px 28px rgba(42, 83, 71, 0.08);
+}
+
+.site-header .header-actions a,
+.contact-menu summary {
+  border-color: rgba(48, 93, 80, 0.3);
+  background: rgba(224, 238, 230, 0.72);
+}
+
+.contact-popover {
+  border-color: rgba(74, 119, 105, 0.24);
+  background: linear-gradient(145deg, rgba(224, 239, 231, 0.97), rgba(207, 228, 217, 0.96));
+}
+
+.portfolio-index-heading {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(244, 249, 246, 0.54), transparent 40%),
+    linear-gradient(180deg, #dcebe2, #e4f0e8);
+}
+
+.index-page .grouped-index {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(222, 167, 194, 0.22), transparent 24rem),
+    radial-gradient(circle at 82% 62%, rgba(143, 199, 170, 0.42), transparent 30rem),
+    linear-gradient(180deg, #d8e9df, #e4f0e8);
+}
+
+.index-page .category-accordion:not([open]) {
+  border-color: rgba(77, 126, 110, 0.3);
+  background:
+    linear-gradient(145deg, rgba(233, 243, 237, 0.58), transparent 42%),
+    linear-gradient(155deg, rgba(151, 207, 182, 0.62), rgba(88, 166, 143, 0.36));
+  box-shadow:
+    inset 0 1px 0 rgba(245, 250, 247, 0.72),
+    inset 0 -24px 38px rgba(45, 113, 94, 0.09),
+    0 22px 52px rgba(45, 87, 75, 0.14);
+}
+
+.index-page .grouped-index.has-open-folder {
+  background:
+    radial-gradient(circle at 14% 14%, rgba(221, 166, 193, 0.24), transparent 28rem),
+    radial-gradient(circle at 86% 72%, rgba(132, 195, 165, 0.4), transparent 32rem),
+    rgba(216, 233, 223, 0.95);
+}
+
+.index-page .grouped-index.has-open-folder .category-accordion[open] {
+  border-color: rgba(74, 119, 105, 0.26);
+  background: rgba(226, 239, 232, 0.94);
+}
+
+.index-page .grouped-index.has-open-folder .category-accordion[open] summary {
+  background: linear-gradient(180deg, rgba(233, 243, 237, 0.96), rgba(216, 232, 223, 0.92));
+}
+
+.index-page .grouped-index.has-open-folder .category-accordion[open] .project-index {
+  background:
+    radial-gradient(circle at 92% 6%, rgba(239, 246, 242, 0.54), transparent 22rem),
+    #dcebe2;
+}
+
+.index-page .grouped-index.has-open-folder .category-accordion[open] .index-row {
+  border-color: rgba(76, 121, 107, 0.2);
+  background: rgba(232, 242, 236, 0.88);
+}
+
+.index-page .simple-footer {
+  background: rgba(218, 234, 224, 0.94);
+}
+
+.case-page {
+  color: #2f5048;
+  background:
+    radial-gradient(circle at 88% 6%, rgba(224, 171, 197, 0.22), transparent 22rem),
+    linear-gradient(145deg, #e3f0e8, #d7e9de);
+}
+
+.case-page .compact-title {
+  background:
+    radial-gradient(circle at 85% 16%, rgba(238, 246, 241, 0.58), transparent 18rem),
+    linear-gradient(145deg, #e7f2eb, #d8e9df);
+}
+
+.case-page .project-overview {
+  background:
+    radial-gradient(circle at 88% 18%, rgba(224, 168, 196, 0.2), transparent 22rem),
+    linear-gradient(145deg, rgba(225, 239, 231, 0.92), rgba(193, 222, 207, 0.78));
+}
+
+.case-page .project-background,
+.case-page .editorial-section {
+  background: #e5f0e9;
+}
+
+.case-page .editorial-section > header,
+.case-page .output-section > header,
+.case-page .solution-section > header {
+  background: rgba(225, 239, 231, 0.94);
+}
+
+.case-page .process-grid,
+.case-page .testing-grid,
+.case-page .solution-grid,
+.case-page .output-gallery {
+  background:
+    radial-gradient(circle at 84% 10%, rgba(238, 246, 241, 0.38), transparent 20rem),
+    linear-gradient(145deg, #d7e8de, #e4f0e8);
+}
+
+.case-page .process-grid article,
+.case-page .testing-grid article,
+.case-page .solution-grid article,
+.case-page .case-summary-section article {
+  border-color: rgba(76, 121, 107, 0.24);
+  background: rgba(232, 242, 236, 0.9);
+  box-shadow:
+    inset 0 1px 0 rgba(246, 250, 248, 0.72),
+    0 16px 36px rgba(47, 91, 78, 0.08);
+}
+
+.case-page .case-summary-section {
+  background:
+    radial-gradient(circle at 16% 16%, rgba(224, 168, 196, 0.22), transparent 24rem),
+    linear-gradient(145deg, #d8e9df, #e5f0e9);
+}
