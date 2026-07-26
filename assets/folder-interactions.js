@@ -215,9 +215,8 @@ const enhanceGreenBloomPrototypes = () => {
       {
         title: "个人中心",
         text: "将课程、照片和反馈整理为可分享成果。",
-        x: "76%",
-        y: "31%",
-        edge: "end",
+        x: "38%",
+        y: "9%",
       },
     ],
     [
@@ -233,14 +232,14 @@ const enhanceGreenBloomPrototypes = () => {
         title: "一键发布与招募",
         text: "生成活动海报和报名二维码。",
         x: "18%",
-        y: "70%",
+        y: "67%",
         edge: "start",
       },
       {
         title: "反馈收集",
         text: "统一收集参与者反馈和教学数据。",
         x: "28%",
-        y: "70%",
+        y: "67%",
       },
     ],
     [
