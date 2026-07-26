@@ -237,8 +237,11 @@ const enhanceGreenBloomPrototypes = () => {
     const figure = document.createElement("figure");
     figure.className =
       "ppt-figure annotated-prototype green-bloom-prototype";
+    const frame = document.createElement("span");
+    frame.className = "green-prototype-frame";
     image.replaceWith(figure);
-    figure.append(image);
+    figure.append(frame);
+    frame.append(image);
 
     annotations[imageIndex].forEach((annotation) => {
       const hotspot = document.createElement("button");
