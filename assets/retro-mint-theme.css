@@ -845,3 +845,30 @@ body.folder-view {
     transition: none;
   }
 }
+
+/* Display project images without an additional white card behind them */
+.case-page .overview-visual {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.case-page .overview-visual.overview-visual-captioned {
+  background: rgba(255, 255, 255, 0.16);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.42);
+}
+
+.case-page .scene-hero,
+.case-page .ppt-figure {
+  background: transparent;
+}
+
+.case-page .scene-hero > img,
+.case-page .output-gallery img,
+.case-page .output-gallery figure img,
+.case-page .visual-gallery img {
+  border: 0 !important;
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
