@@ -394,6 +394,7 @@ body.folder-view {
   background:
     radial-gradient(circle at 75% 0%, rgba(87, 178, 151, 0.32), transparent 28rem),
     var(--forest-900);
+  animation: folder-overlay-in 220ms ease-out both;
 }
 
 .index-page .grouped-index.has-open-folder .category-accordion:not([open]) {
@@ -420,11 +421,7 @@ body.folder-view {
 }
 
 .index-page .grouped-index.has-open-folder .category-accordion[open] summary::after {
-  content: "点击顶部收起 · ESC 返回";
-  grid-column: 1;
-  color: rgba(240, 255, 241, 0.72);
-  font-size: 11px;
-  letter-spacing: 0.12em;
+  content: none;
 }
 
 .index-page .grouped-index.has-open-folder .category-accordion[open] .project-index {
@@ -746,6 +743,12 @@ body.folder-view {
   -webkit-backdrop-filter: blur(28px) saturate(0.92);
 }
 
+.index-page .grouped-index.has-open-folder.is-closing {
+  opacity: 0;
+  animation: none;
+  transition: opacity 180ms ease;
+}
+
 .index-page .grouped-index.has-open-folder .category-accordion[open] {
   overflow: hidden;
   width: min(1280px, 100%);
@@ -759,6 +762,16 @@ body.folder-view {
   backdrop-filter: blur(30px) saturate(1.05);
   -webkit-backdrop-filter: blur(30px) saturate(1.05);
   animation: finder-window-open 360ms cubic-bezier(0.18, 0.86, 0.28, 1);
+  will-change: transform, opacity;
+}
+
+.index-page .grouped-index.has-open-folder .category-accordion[open].is-closing {
+  opacity: 0;
+  transform: translateY(12px) scale(0.985);
+  animation: none;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
 }
 
 .index-page .grouped-index.has-open-folder .category-accordion[open] summary {
@@ -803,8 +816,9 @@ body.folder-view {
 }
 
 .index-page .grouped-index.has-open-folder .category-accordion[open] .category-count {
-  grid-column: 3;
+  grid-column: 1;
   grid-row: 1;
+  justify-self: start;
   color: #59635f;
   align-self: center;
   font-size: 12px;
@@ -815,13 +829,32 @@ body.folder-view {
 }
 
 .index-page .grouped-index.has-open-folder .category-accordion[open] summary::after {
-  content: "点击关闭 · ESC";
+  content: "×";
   grid-column: 3;
-  grid-row: 2;
+  grid-row: 1 / 3;
   justify-self: end;
-  color: #7d8782;
-  font-size: 10px;
-  letter-spacing: 0.04em;
+  align-self: center;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(31, 75, 68, 0.18);
+  border-radius: 50%;
+  color: #53615c;
+  background: rgba(255, 255, 255, 0.28);
+  font-size: 21px;
+  font-weight: 300;
+  line-height: 1;
+  transition:
+    color 160ms ease,
+    background 160ms ease,
+    transform 160ms ease;
+}
+
+.index-page .grouped-index.has-open-folder .category-accordion[open] summary:hover::after {
+  color: #183d37;
+  background: rgba(255, 255, 255, 0.54);
+  transform: rotate(8deg);
 }
 
 .index-page .grouped-index.has-open-folder .category-accordion[open] .project-index {
@@ -886,13 +919,20 @@ body.folder-view {
 @keyframes finder-window-open {
   from {
     opacity: 0;
-    transform: translateY(34px) scale(0.93);
-    filter: blur(5px);
+    transform: translateY(14px) scale(0.985);
   }
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
-    filter: blur(0);
+  }
+}
+
+@keyframes folder-overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -916,10 +956,6 @@ body.folder-view {
     padding: 14px 16px;
   }
 
-  .index-page .grouped-index.has-open-folder .category-accordion[open] summary::after {
-    content: "ESC";
-  }
-
   .index-page .grouped-index.has-open-folder .category-accordion[open] .project-index {
     grid-template-columns: 1fr;
     padding: 16px;
@@ -939,6 +975,7 @@ body.folder-view {
 
 @media (prefers-reduced-motion: reduce) {
   .index-page .category-accordion,
+  .index-page .grouped-index.has-open-folder,
   .index-page .grouped-index.has-open-folder .category-accordion[open],
   .index-page .grouped-index.has-open-folder .category-accordion[open] .index-row {
     animation: none;
